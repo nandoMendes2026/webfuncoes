@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcular Ganho Mensal</title>
+    <script>
+        function formatCurrency(input) {
+            let value = input.value.replace(/\D/g, '');
+            value = (value / 100).toFixed(2);
+            value = value.replace('.', ',');
+            input.value = value;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcular Valor Real de Ganho Mensal</h1>
+    <form action="/calcular_ganho" method="post">
+        <label for="valorMensalRecebido">Valor Mensal Recebido:</label>
+        <input type="text" name="valorMensalRecebido" oninput="formatCurrency(this)" required><br><br>
+
+        <label for="valorMensalCombustível">Valor Mensal Combustível:</label>
+        <input type="text" name="valorMensalCombustível" oninput="formatCurrency(this)" required><br><br>
+
+        <label for="valorMensalAlimentacao">Valor Mensal Alimentação:</label>
+        <input type="text" name="valorMensalAlimentacao" oninput="formatCurrency(this)" required><br><br>
+
+        <label for="valorMensalImposto">Valor Mensal Imposto:</label>
+        <input type="text" name="valorMensalImposto" oninput="formatCurrency(this)" required><br><br>
+
+        <input type="submit" value="Calcular">
+    </form>
+</body>
+</html>
